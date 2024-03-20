@@ -53,4 +53,37 @@ function filterQuestions(category) {
         // Display filtered questions
         // Implement your logic here to display filtered questions
     }
+};
+
+// Function to set the current question
+function setCurrentQuestion(questionData) {
+    document.getElementById("questionDisplay").textContent = questionData.question_text;
+    setCorrectAnswer(questionData.answer_text);
 }
+
+// Function to set the correct answer
+function setCorrectAnswer(answer) {
+    correctAnswer = answer.toLowerCase(); // Convert answer to lowercase for case-insensitive comparison
+}
+
+// Function to check the user's answer
+function checkAnswer(userAnswer) {
+    var formattedUserAnswer = userAnswer.toLowerCase(); // Convert user's answer to lowercase for case-insensitive comparison
+    if (formattedUserAnswer === correctAnswer) {
+        document.getElementById("resultMessage").textContent = "Correct!";
+    } else {
+        document.getElementById("resultMessage").textContent = "Wrong! Try again.";
+    }
+}
+
+// Fetch a random question from the database
+var questionsData = JSON.parse(document.getElementById("content").dataset.questions);
+var randomQuestionIndex = Math.floor(Math.random() * questionsData.length);
+var randomQuestion = questionsData[randomQuestionIndex];
+setCurrentQuestion(randomQuestion);
+
+// Event listener for answer submission
+document.getElementById("submitAnswerBtn").addEventListener("click", function() {
+    var userAnswer = document.getElementById("answerInput").value;
+    checkAnswer(userAnswer);
+});
