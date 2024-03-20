@@ -17,7 +17,8 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     displayQuestion();
-
+    
+    // Button for revealing answer and showing next question.
     btn.addEventListener("click", function() {
         const answerElement = content.querySelector('.answer');
         if (btn.textContent === "Reveal Answer") {
@@ -29,3 +30,27 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 });
+
+// JavaScript to handle category selection
+document.getElementById("categorySelect").addEventListener("change", function() {
+    var selectedCategory = this.value;
+    filterQuestions(selectedCategory);
+});
+
+function filterQuestions(category) {
+    var questions = document.getElementById("content").dataset.questions;
+    var parsedQuestions = JSON.parse(questions);
+    
+    // Filter questions based on selected category
+    if (category === "all") {
+        // Display all questions
+        // Implement your logic here to display all questions
+    } else {
+        // Display questions from selected category
+        var filteredQuestions = parsedQuestions.filter(function(question) {
+            return question.category === category;
+        });
+        // Display filtered questions
+        // Implement your logic here to display filtered questions
+    }
+}
