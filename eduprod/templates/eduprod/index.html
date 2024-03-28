@@ -1,22 +1,12 @@
 {% extends "eduprod/layout.html" %}
 {% block body %}
 <div id="content" data-questions='{{ questions_json|safe }}'></div>
-<!-- Question display -->
-<div id="questionDisplay"></div>
 
-<!-- Answer box -->
-<input type="text" id="answerInput" placeholder="Enter your answer">
-<button id="submitAnswerBtn">Submit Answer</button>
-<p id="resultMessage"></p>
-
-<button id="revealBtn">Reveal Answer</button> 
-
-<!-- Dropdown menu for selecting categories -->
-<select id="categorySelect">
+ <!-- Dropdown menu for selecting categories -->
+ <select id="categorySelect">
     <option value="all">All Categories</option>
     {% for category in categories %}
         <option value="{{ category }}">{{ category }}</option>
     {% endfor %}
 </select>
-
 {% endblock %}

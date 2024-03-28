@@ -1,0 +1,14 @@
+{% extends "eduprod/layout.html" %}
+{% block body %}
+<div id="content" data-questions='{{ questions_json|safe }}'></div>
+<!-- Question display -->
+<div id="questionDisplay"></div>
+
+<!-- Answer box -->
+<input type="text" id="answerInput" placeholder="Enter your answer">
+<button id="submitAnswerBtn">Submit Answer</button>
+<p id="resultMessage"></p>
+
+<button id="revealBtn">Reveal Answer</button> 
+
+{% endblock %}

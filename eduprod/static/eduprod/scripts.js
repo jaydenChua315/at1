@@ -35,6 +35,7 @@ document.addEventListener("DOMContentLoaded", function() {
 document.getElementById("categorySelect").addEventListener("change", function() {
     var selectedCategory = this.value;
     filterQuestions(selectedCategory);
+    filterQuestions1(selectCategory1);
 });
 
 function filterQuestions(category) {
@@ -70,9 +71,9 @@ function setCorrectAnswer(answer) {
 function checkAnswer(userAnswer) {
     var formattedUserAnswer = userAnswer.toLowerCase(); // Convert user's answer to lowercase for case-insensitive comparison
     if (formattedUserAnswer === correctAnswer) {
-        document.getElementById("resultMessage").textContent = "Correct!";
+        document.getElementById("resultMessage").innerHTML = "Got it!";
     } else {
-        document.getElementById("resultMessage").textContent = "Wrong! Try again.";
+        document.getElementById("resultMessage").textContent = "Oops, Try again?";
     }
 }
 
