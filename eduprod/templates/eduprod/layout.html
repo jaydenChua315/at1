@@ -19,6 +19,11 @@
             </form>
         </div>
     </div>  
+    <nav>
+        <a href="{% url 'eduprod:index' %}">Home</a>
+        <a href="{% url 'eduprod:functions' %}">Functions</a>
+        <a href="{% url 'eduprod:question_list' %}">Questions</a>
+    </nav>
     {% block body %}
     {% endblock %}
 </body>

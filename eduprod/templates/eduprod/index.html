@@ -1,12 +1,13 @@
 {% extends "eduprod/layout.html" %}
-{% block body %}
-<div id="content" data-questions='{{ questions_json|safe }}'></div>
 
- <!-- Dropdown menu for selecting categories -->
- <select id="categorySelect">
-    <option value="all">All Categories</option>
-    {% for category in categories %}
-        <option value="{{ category }}">{{ category }}</option>
-    {% endfor %}
-</select>
+{% block body %}
+
+<div id="welcome-message">
+
+    <h2>Welcome to Quizee!</h2>
+
+    <p>Select "Revise" to start practicing with flashcards or "Questions" to manage your flashcards.</p>
+
+</div>
+
 {% endblock %}
