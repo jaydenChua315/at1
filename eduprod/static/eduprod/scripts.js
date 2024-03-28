@@ -67,24 +67,8 @@ function setCorrectAnswer(answer) {
     correctAnswer = answer.toLowerCase(); // Convert answer to lowercase for case-insensitive comparison
 }
 
-// Function to check the user's answer
-function checkAnswer(userAnswer) {
-    var formattedUserAnswer = userAnswer.toLowerCase(); // Convert user's answer to lowercase for case-insensitive comparison
-    if (formattedUserAnswer === correctAnswer) {
-        document.getElementById("resultMessage").innerHTML = "Got it!";
-    } else {
-        document.getElementById("resultMessage").textContent = "Oops, Try again?";
-    }
-}
-
 // Fetch a random question from the database
 var questionsData = JSON.parse(document.getElementById("content").dataset.questions);
 var randomQuestionIndex = Math.floor(Math.random() * questionsData.length);
 var randomQuestion = questionsData[randomQuestionIndex];
 setCurrentQuestion(randomQuestion);
-
-// Event listener for answer submission
-document.getElementById("submitAnswerBtn").addEventListener("click", function() {
-    var userAnswer = document.getElementById("answerInput").value;
-    checkAnswer(userAnswer);
-});
