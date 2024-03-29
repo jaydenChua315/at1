@@ -1,24 +1,42 @@
 document.addEventListener("DOMContentLoaded", function() {
     let currentQuestionIndex = 0;
+    let filteredQuestions = [];
     const questions = JSON.parse(document.getElementById('content').getAttribute('data-questions'));
     const content = document.getElementById('content');
+    const categorySelect = document.getElementById('categorySelect');
     const btn = document.getElementById('revealBtn');
 
+    function filterQuestionsByCategory(category) {
+        if (category) {
+            filteredQuestions = questions.filter(q => q.fields.category === category);
+        } else {
+            filteredQuestions = questions.slice(); // Copy all questions if no category is selected
+        }
+        currentQuestionIndex = 0; // Reset index to start from the first question of the filtered set
+        displayQuestion(); // Display the first question from the filtered set
+    };
+
     function displayQuestion() {
-        if (currentQuestionIndex < questions.length) {
-            const question = questions[currentQuestionIndex].fields.question_text;
-            const answer = questions[currentQuestionIndex].fields.answer_text;
+        if (currentQuestionIndex < filteredQuestions.length) {
+            const question = filteredQuestions[currentQuestionIndex].fields.question_text;
+            const answer = filteredQuestions[currentQuestionIndex].fields.answer_text;
             content.innerHTML = `<div class='question'>Question: ${question}</div><div class='answer' style='display: none;'>Answer: ${answer}</div>`;
             btn.textContent = "Reveal Answer";
+            btn.style.display = "block"; // Ensure the button is visible
         } else {
-            content.innerHTML = "No more questions.";
-            btn.style.display = "none";
+            content.innerHTML = "No more questions in this category.";
+            btn.style.display = "none"; // Hide the button if there are no more questions
         }
-    }
+    };
 
-    displayQuestion();
-    
-    // Button for revealing answer and showing next question.
+    // Listen for changes on the category dropdown
+    categorySelect.addEventListener('change', (event) => {
+        filterQuestionsByCategory(event.target.value);
+    });
+
+    // Filter questions based on the default or initial category selection
+    filterQuestionsByCategory(categorySelect.value);
+
     btn.addEventListener("click", function() {
         const answerElement = content.querySelector('.answer');
         if (btn.textContent === "Reveal Answer") {
@@ -30,45 +48,3 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 });
-
-// JavaScript to handle category selection
-document.getElementById("categorySelect").addEventListener("change", function() {
-    var selectedCategory = this.value;
-    filterQuestions(selectedCategory);
-    filterQuestions1(selectCategory1);
-});
-
-function filterQuestions(category) {
-    var questions = document.getElementById("content").dataset.questions;
-    var parsedQuestions = JSON.parse(questions);
-    
-    // Filter questions based on selected category
-    if (category === "all") {
-        // Display all questions
-        // Implement your logic here to display all questions
-    } else {
-        // Display questions from selected category
-        var filteredQuestions = parsedQuestions.filter(function(question) {
-            return question.category === category;
-        });
-        // Display filtered questions
-        // Implement your logic here to display filtered questions
-    }
-};
-
-// Function to set the current question
-function setCurrentQuestion(questionData) {
-    document.getElementById("questionDisplay").textContent = questionData.question_text;
-    setCorrectAnswer(questionData.answer_text);
-}
-
-// Function to set the correct answer
-function setCorrectAnswer(answer) {
-    correctAnswer = answer.toLowerCase(); // Convert answer to lowercase for case-insensitive comparison
-}
-
-// Fetch a random question from the database
-var questionsData = JSON.parse(document.getElementById("content").dataset.questions);
-var randomQuestionIndex = Math.floor(Math.random() * questionsData.length);
-var randomQuestion = questionsData[randomQuestionIndex];
-setCurrentQuestion(randomQuestion);
