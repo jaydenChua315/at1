@@ -1,7 +1,7 @@
 {% extends "eduprod/layout.html" %}
 {% block body %}
 <!--Question-->
-<div id="content" data-questions='{{ questions_json|safe }}'></div>
+<div id="content" data-questions='{{ questions_json }}'></div>
 <!--Answer Button-->
 <button id="revealBtn">Reveal Answer</button>
 <form action="{% url 'eduprod:index' %}" method="post" style="margin: 0; margin-left: 20px;">
