@@ -8,6 +8,15 @@
     {% csrf_token %}
     <button type="submit">Reset Quiz</button>
 </form>
+<br></br>
+<!-- Dropdown menu for selecting categories -->
+<select id="categorySelect">
+    <option value="all">All Categories</option>
+    {% for category in categories %}
+        <option value="{{ category }}">{{ category }}</option>
+    {% endfor %}
+</select>
+<br></br>
 <!-- Add Question Link -->
 <div style="margin-top: 20px;">
     <a href="{% url 'eduprod:question_add' %}">Add a new question</a>
@@ -16,4 +25,5 @@
 <div style="margin-top: 10px;">
     <a href="{% url 'eduprod:question_list' %}">Manage questions</a>
 </div>
+
 {% endblock %}
