@@ -8,7 +8,9 @@ from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from .forms import QuestionForm
 from django.views.generic.list import ListView
+from django.contrib.auth.decorators import login_required
 
+@login_required
 def index(request):
     # Get the first and last question ID
     first_id = Question.objects.order_by('id').first().id
