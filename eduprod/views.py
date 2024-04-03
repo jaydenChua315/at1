@@ -35,10 +35,11 @@ def index(request):
     categories = Question.objects.values_list('category', flat=True).distinct()
 
 ##Pass the Data to index.html##
-    return render(request, 'eduprod/index.html', {
+    context = {
         'questions_json': questions_json,
         'categories': categories
-    })
+    }
+    return render(request, 'eduprod/index.html', context)
 
 class QuestionCreate(LoginRequiredMixin, CreateView):
     model = Question
