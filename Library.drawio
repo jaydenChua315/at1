@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2024-05-29T06:26:09.436Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36" etag="1belYSO7CifRtYDcErYi" version="24.4.9" type="github">
+<mxfile host="app.diagrams.net" modified="2024-05-29T06:51:30.624Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36" etag="RkjoJ5HEk3asH_TWzn1H" version="24.4.9" type="github">
   <diagram name="Page-1" id="D180ti1s9Xps1HlBHsWy">
     <mxGraphModel dx="955" dy="1644" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -264,6 +264,33 @@
           <mxGeometry width="160" relative="1" as="geometry">
             <mxPoint x="510" y="-710" as="sourcePoint" />
             <mxPoint x="420" y="-672" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="PecMlrZXPsWRhKTykcNn-83" value="DataFetcher" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="520" y="-1010" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="PecMlrZXPsWRhKTykcNn-85" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="PecMlrZXPsWRhKTykcNn-83">
+          <mxGeometry y="26" width="160" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="PecMlrZXPsWRhKTykcNn-86" value="fetch_data(): String" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="PecMlrZXPsWRhKTykcNn-83">
+          <mxGeometry y="34" width="160" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="PecMlrZXPsWRhKTykcNn-87" value="Report" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="130" y="-1020" width="230" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="PecMlrZXPsWRhKTykcNn-88" value="- fetcher: DataFetcher" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="PecMlrZXPsWRhKTykcNn-87">
+          <mxGeometry y="26" width="230" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="PecMlrZXPsWRhKTykcNn-89" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="PecMlrZXPsWRhKTykcNn-87">
+          <mxGeometry y="52" width="230" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="PecMlrZXPsWRhKTykcNn-90" value="+ __init__(fetcher: DataFetcher): void&lt;div&gt;+ generate(): String&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="PecMlrZXPsWRhKTykcNn-87">
+          <mxGeometry y="60" width="230" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="PecMlrZXPsWRhKTykcNn-96" value="Use" style="endArrow=open;endSize=12;dashed=1;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="360" y="-980.45" as="sourcePoint" />
+            <mxPoint x="520" y="-980.45" as="targetPoint" />
           </mxGeometry>
         </mxCell>
       </root>
