@@ -1,9 +1,27 @@
-<mxfile host="app.diagrams.net" modified="2024-08-21T07:18:41.503Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36" version="24.4.13" etag="g4AD4YGSmum1lIoblJYg" type="github">
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36" version="24.7.7">
   <diagram name="Page-1" id="lMCY6Bm2H90J-NsfSAGm">
-    <mxGraphModel>
+    <mxGraphModel dx="1050" dy="522" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
+        <mxCell id="EDpC2cu1dp0vCIOk5We7-1" value="" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="354" y="20" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="EDpC2cu1dp0vCIOk5We7-2" value="" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="296.75" y="600" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="EDpC2cu1dp0vCIOk5We7-3" value="State drop down select" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" vertex="1" parent="1">
+          <mxGeometry x="350" y="160" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="EDpC2cu1dp0vCIOk5We7-4" value="Major regions of the state of selected state dropdown select (filtered by javascript)" style="shape=parallelogram;html=1;strokeWidth=2;perimeter=parallelogramPerimeter;whiteSpace=wrap;rounded=1;arcSize=12;size=0.23;" vertex="1" parent="1">
+          <mxGeometry x="190.5" y="260" width="447" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="EDpC2cu1dp0vCIOk5We7-5" value="Only want postcode of the selected major region (filtered by javascript)&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="shape=parallelogram;html=1;strokeWidth=2;perimeter=parallelogramPerimeter;whiteSpace=wrap;rounded=1;arcSize=12;size=0.23;" vertex="1" parent="1">
+          <mxGeometry x="186.5" y="380" width="363.5" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="EDpC2cu1dp0vCIOk5We7-6" value="Lawnsof selected postcode dropdown (filtered by javascript)" style="shape=parallelogram;html=1;strokeWidth=2;perimeter=parallelogramPerimeter;whiteSpace=wrap;rounded=1;arcSize=12;size=0.23;" vertex="1" parent="1">
+          <mxGeometry x="130" y="495" width="453.5" height="90" as="geometry" />
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
